@@ -37,22 +37,22 @@
     </style>
     <script
       type="text/javascript"
-      src="http://web.vokino.tv/js/orsay.js"
+      src="https://vokino25.github.io/vokino/js/orsay.js"
     ></script>
   </head>
   <body onload="orsayOnLoad()">
     <script>
       console.log('Start load')
 
-      var domain = 'web.vokino.tv'
+      var domain = 'vokino25.github.io/vokino'
 
-      var PROTOCOL = 'http'
+      var PROTOCOL = 'https'
 
       function createBridge() {
         console.log('Create bridge')
 
         document.getElementsByTagName('body')[0].innerHTML =
-          '<iframe src="http://' + domain + '/" id="frame"></iframe>'
+          '<iframe src="https://' + domain + '/" id="frame"></iframe>'
 
         var frm = document.getElementById('frame')
 
@@ -75,7 +75,7 @@
       }
 
       createScript(
-        'http://' + domain + '/js/loader.js?v' + Math.random(),
+        'https://' + domain + '/js/loader.js?v' + Math.random(),
         function () {
           console.log('Protocol http fail')
 
