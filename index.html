@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="http://gmpg.org/xfn/11" rel="profile" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/png" />
+
+    <title>VoKino</title>
+    <meta content="" name="description" />
+    <meta content="never" name="referrer" />
+    <meta content="#000000" name="theme-color" />
+
+    <style>
+      body {
+        background: #000;
+        color: #fff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="http://web.vokino.tv/js/orsay.js"
+    ></script>
+  </head>
+  <body onload="orsayOnLoad()">
+    <script>
+      console.log('Start load')
+
+      var domain = 'web.vokino.tv'
+
+      var PROTOCOL = 'http'
+
+      function createBridge() {
+        console.log('Create bridge')
+
+        document.getElementsByTagName('body')[0].innerHTML =
+          '<iframe src="http://' + domain + '/" id="frame"></iframe>'
+
+        var frm = document.getElementById('frame')
+
+        window.addEventListener('keydown', function (e) {
+          frm.focus()
+        })
+
+        frm.focus()
+      }
+
+      function createScript(src, error) {
+        console.log('Load script:' + src)
+
+        var script = document.createElement('script')
+        script.onerror = error
+        script.src = src
+        script.type = 'text/javascript'
+
+        document.getElementsByTagName('body')[0].appendChild(script)
+      }
+
+      createScript(
+        'http://' + domain + '/js/loader.js?v' + Math.random(),
+        function () {
+          console.log('Protocol http fail')
+
+          createBridge()
+        }
+      )
+    </script>
+  </body>
+</html>
