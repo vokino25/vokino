@@ -3,6 +3,11 @@ console.log('Loader', 'start')
 var protocol = typeof PROTOCOL !== 'undefined' ? PROTOCOL : 'http'
 
 var base_url = protocol + '://vokino25.github.io/vokino/'
+
+var api_url = protocol + '://api.vokino.pro'
+var proxy_url = 'proxy.vokino.pro'
+var socket_url = protocol === 'https' ? 'wss' : 'ws' + '://vokino.pro:2096/'
+
 //var base_url = protocol + '://192.168.1.9:3050/';
 //var base_url = protocol + '://localhost:3050/';
 
@@ -158,6 +163,8 @@ httpGetAsync(
   },
   function () {
     document.getElementsByTagName('body')[0].innerHTML =
-      '<div style="height: 100vh; display: flex; align-items: center; justify-content: center;"><img src="https://vokino25.github.io/vokino/img/icons/tv-broken.svg" style="width: 18%" /></div>'
+      '<div style="height: 100vh; display: flex; align-items: center; justify-content: center;"><img src="' +
+      base_url +
+      '/vokino/img/icons/tv-broken.svg" style="width: 18%" /></div>'
   }
 )
