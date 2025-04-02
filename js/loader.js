@@ -6,7 +6,7 @@ var base_url = protocol + '://vokino25.github.io/vokino/'
 
 var api_url = protocol + '://api.vokino.pro'
 var proxy_url = 'proxy.vokino.pro'
-var socket_url = protocol === 'https' ? 'wss' : 'ws' + '://vokino.pro:2096/'
+var socket_url = (protocol === 'https' ? 'wss' : 'ws') + '://vokino.pro:2096/'
 
 //var base_url = protocol + '://192.168.1.9:3050/';
 //var base_url = protocol + '://localhost:3050/';
