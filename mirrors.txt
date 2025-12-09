@@ -1,3 +1,4 @@
 vokino.pro
+vokino.co
 vokino.org
 vokino.tv
